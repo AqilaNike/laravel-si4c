@@ -345,13 +345,19 @@
                 </ul>
               </li>
               <li class="nav-item">
-                <a href="{{ route('fakultas.index') }}" class="nav-link">
+                <a href="{{ route('fakultas.index') }}" class="nav-link {{ request()->routeIs('fakultas.*') ? 'active' : '' }}">
                   <i class="nav-icon bi bi-bank"></i>
                   <p>Fakultas</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ url('prodi') }}" class="nav-link">
+                <a href="{{ route('periode.index') }}" class="nav-link {{ request()->routeIs('periode.*') ? 'active' : '' }}">
+                  <i class="nav-icon bi bi-calendar-event"></i>
+                  <p>Periode</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('prodi.index') }}" class="nav-link {{ request()->routeIs('prodi.*') ? 'active' : '' }}">
                   <i class="nav-icon bi bi-map"></i>
                   <p>Prodi</p>
                 </a>
