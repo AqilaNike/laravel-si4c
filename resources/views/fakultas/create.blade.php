@@ -3,7 +3,7 @@
 @section('title', 'Tambah Fakultas')
 
 @section('content')
-    <form action="/fakultas" method="post">
+    <form action="{{ route('fakultas.store') }}" method="post">
     @csrf
     <div class="m-3">
         <h5>Form Pengisian Data Fakultas</h5>
@@ -32,6 +32,3 @@
     </div>
     </form>
 @endsection
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-</body>
-</html>

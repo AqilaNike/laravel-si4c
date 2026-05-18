@@ -7,15 +7,15 @@
 <table class="table table-bordered table-hover">
     <thead>
         <tr>
-            <th>Nama</th>
-            <th>Tahun</th>
+            <th>Tahun Akademik</th>
+            <th>Semester</th>
         </tr>
     </thead>
     <tbody>
         @foreach ($result as $item)
             <tr>
-                <td>{{ $item->nama }}</td>
-                <td>{{ $item->tahun }}</td>
+                <td>{{ $item->tahun_akademik }}</td>
+                <td>{{ $item->kode_smt }}</td>
             </tr>
         @endforeach
     </tbody>

@@ -355,11 +355,11 @@
                   <i class="nav-icon bi bi-calendar-event"></i>
                   <p>Periode</p>
                 </a>
-              </li>
+              </li> 
               <li class="nav-item">
                 <a href="{{ route('prodi.index') }}" class="nav-link {{ request()->routeIs('prodi.*') ? 'active' : '' }}">
                   <i class="nav-icon bi bi-map"></i>
-                  <p>Prodi</p>
+                  <p>Program Studi</p>
                 </a>
               </li>
               <li class="nav-item">
