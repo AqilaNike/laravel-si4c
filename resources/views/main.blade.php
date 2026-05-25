@@ -363,6 +363,12 @@
                 </a>
               </li>
               <li class="nav-item">
+                <a href="{{ route('mahasiswa.index') }}" class="nav-link {{ request()->routeIs('mahasiswa.*') ? 'active' : '' }}">
+                  <i class="nav-icon bi bi-people"></i>
+                  <p>Mahasiswa</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="../generate/theme.html" class="nav-link">
                   <i class="nav-icon bi bi-palette"></i>
                   <p>Theme Generate</p>
@@ -910,6 +916,28 @@
     </script>
     <!--end::OverlayScrollbars Configure-->
     <!--end::Script-->
+    {{-- jQuery --}}
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"
+        integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+    {{-- sweet alert --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+    <script type="text/javascript">
+        $('.show_confirm').click(function(event) {
+            var form = $(this).closest("form"); // Ambil form 
+            var nama = $(this).data("nama"); // Ambil data nama dari atribut data-nama dari index.blade.php
+            event.preventDefault(); // Hentikan aksi default tombol submit
+            swal({
+                    title: `Apakah Anda yakin ingin menghapus data ${nama} ini?`,
+                    text: "If you delete this, it will be gone forever.",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                })
+                .then((willDelete) => { // Setelah pengguna memilih opsi
+                    if (willDelete) { // Jika pengguna memilih "OK", maka form akan disubmit
+                        form.submit();
+                    }
+                });
   </body>
   <!--end::Body-->
 </html>

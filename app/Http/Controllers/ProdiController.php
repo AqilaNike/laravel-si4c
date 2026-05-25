@@ -55,7 +55,8 @@ class ProdiController extends Controller
      */
     public function edit(Prodi $prodi)
     {
-        //
+        $fakultas = \App\Models\Fakultas::all();
+        return view('prodi.edit', compact('prodi', 'fakultas'));
     }
 
     /**
@@ -71,6 +72,8 @@ class ProdiController extends Controller
      */
     public function destroy(Prodi $prodi)
     {
-        //
+        $prodi = Prodi::find($prodi->id);
+        $prodi->delete();
+        return redirect()->route('prodi.index')->with('success', 'Prodi berhasil dihapus');
     }
 }
