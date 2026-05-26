@@ -24,7 +24,7 @@
                         @csrf
                         <input name="_method" type="hidden" value="DELETE">
                         <button type="submit" class="btn btn-danger btn-rounded show_confirm" data-toggle="tooltip"
-                            title='Delete' data-nama='{{ $item->nama_fakultas }}'>Hapus</button>
+                            title='Delete' data-nama='{{ $item->nama }}'>Hapus</button>
                     </form>
                 </td>
             </tr>

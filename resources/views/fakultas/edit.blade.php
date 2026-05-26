@@ -7,10 +7,10 @@
         @method('PUT')
         @csrf
         <div class="form-group">
-            <label for="nama_fakultas">Nama Fakultas</label>
-            <input type="text" name="nama_fakultas" class="form-control"
-                value="{{ old('nama_fakultas') ?? $fakultas->nama_fakultas }}">
-            @error('nama_fakultas')
+            <label for="nama">Nama Fakultas</label>
+            <input type="text" name="nama" class="form-control"
+                value="{{ old('nama') ?? $fakultas->nama }}">
+            @error('nama')
                 <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>

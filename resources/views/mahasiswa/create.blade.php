@@ -3,7 +3,8 @@
 @section('title', 'Tambah Mahasiswa')
 
 @section('content')
-    <form action="{{ route('mahasiswa.store') }}" method="post">
+    <a href="{{ route('mahasiswa.index') }}" class="btn btn-secondary mb-3">Kembali</a>
+    <form action="{{ route('mahasiswa.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="m-3">
         <h5>Form Pengisian Data Mahasiswa</h5>
@@ -23,9 +24,9 @@
         </div>
         <div class="form-group">
             <label for="foto" class="form-label">Foto</label>
-            <input type="text" name="foto" class="form-control" value="{{ old('foto') }}">
+            <input type="file" name="foto" class="form-control">
             @error('foto')
-                 <div class="text-danger">{{ $message }}</div>  
+                <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>
         <div class="form-group">
@@ -40,7 +41,7 @@
                 <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Simpan</button>
     </div>
     </form>
 @endsection
