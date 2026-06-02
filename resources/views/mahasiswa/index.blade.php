@@ -10,6 +10,7 @@
             <th>Nama</th>
             <th>NPM</th>
             <th>Program Studi</th>
+            <th>Foto</th>
         </tr>
     </thead>
     <tbody>
@@ -17,7 +18,7 @@
             <tr>
                 <td>{{ $item->nama }}</td>
                 <td>{{ $item->npm }}</td>
-                <td>{{ $item->prodi->nama }}</td>
+                <td>{{ $item->prodi->nama_prodi ?? '-' }}</td>
                 <td>
                     @if ($item->foto)
                         <img src="{{ asset('storage/' . $item->foto) }}" alt="Foto" width="50">
